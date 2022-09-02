@@ -33,7 +33,7 @@ const createCard = (news) => {
           <h1 class="text-2xl font-bold leading-loose text-gray-900">
             ${news.title}
           </h1>
-          <p class="text-base leading-relaxed text-gray-400">
+          <p class="text-base leading-relaxed ellipsis text-gray-400">
            ${modifiedDetails}
           </p>
           <div
@@ -95,18 +95,37 @@ const createCard = (news) => {
         <div
           class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
         >
-          <div
-            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md"
+        <img src=${news.image_url} class="" alt=${news.title}/>
+        <div class="p-7">
+            <h1 class="text-2xl font-semibold">${news.title}</h1>
+            <div
+            class="flex items-center justify-between flex-wrap text-gray-600 text-lg my-4 "
           >
-            <h5
-              class="text-xl font-medium leading-normal text-gray-800"
-              id="exampleModalLgLabel"
+            <div
+              class="flex space-x-2.5 mb-4 items-center justify-start basis-3/4 md:basis-1/4"
             >
-              Large modal
-            </h5>
-           
-          </div>
-          <div class="modal-body relative p-4">...</div>
+              <img
+                class="w-10 h-full rounded-full"
+                src=${news.author.img}
+              />
+              <div class="inline-flex flex-col items-start justify-start">
+                <p class="text-base text-gray-800 whitespace-nowrap">${
+                  news.author.name
+                }</p>
+                <p class="text-sm text-gray-500 capitalize">${news.author.published_date.slice(
+                  0,
+                  10
+                )}</p>
+              </div>
+            </div>
+          <p class= 'text-justify first-letter:text-6xl first-letter:font-semibold' >${
+            news.details
+          }</p>
+          
+        </div> <button type="button"
+          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         </div>
       </div>
     </div>
