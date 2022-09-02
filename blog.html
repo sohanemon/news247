@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>News247</title>
+    <script
+      src="https://kit.fontawesome.com/4a314d7cd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { poppins: ["Poppins", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .ellipsis {
+          display: -webkit-box;
+          text-align: justify;
+          text-overflow: -o-ellipsis-lastline;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 w-4/5 mx-auto font-poppins tracking-wide">
+    <!-- -------------------------- todo: navbar -------------------------- -->
+    <header
+      class="text-indigo-600 body-font flex items-center my-5 relative after:border-b-[1px] after:border-indigo-300 after:w-[105%] after:left-1/2 after:-translate-x-1/2 after:absolute after:-bottom-5"
+    >
+      <div
+        class="container mx-auto flex flex-wrap flex-col md:flex-row items-center"
+      >
+        <a
+          class="flex title-font font-medium items-center text-indigo-700 mb-4 md:mb-0"
+        >
+          <i class="fa-regular fa-newspaper text-3xl text-indigo-500"></i>
+          <span class="ml-3 text-xl text-indigo-500 font-semibold"
+            ><span class="p-2 mr-2 rounded bg-indigo-500 text-white">news</span
+            >247</span
+          >
+        </a>
+        <nav
+          class="md:ml-auto flex flex-wrap items-center text-base justify-center text-indigo-400"
+        >
+          <a
+            href="./index.html"
+            class="mr-5 hover:text-indigo-700 cursor-pointer"
+            >News</a
+          >
+          <a
+            href="./blog.html"
+            class="mr-5 relative hover:text-indigo-700 font-bold text-indigo-500 after:-bottom-1 after:border-b-2 after:absolute after:w-1/2 after:left-1/2 after:-translate-x-1/2 hover:after:w-full cursor-pointer after:transition-all after:duration-300 after:border-indigo-500"
+            >Blog</a
+          >
+        </nav>
+      </div>
+      <div>
+        <img src="./images/me.png" class="w-10" alt="" />
+      </div>
+    </header>
+    <ol class="border-l border-gray-300 w-3/4 text-justify mx-auto">
+      <li>
+        <div class="flex flex-start items-center pt-3">
+          <div class="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
+        </div>
+        <div class="mt-0.5 ml-4 mb-6">
+          <h4 class="text-gray-800 font-semibold text-xl mb-1.5">
+            Difference Between var, let, and const in JavaScript
+          </h4>
+          <p class="text-gray-500 mb-3">
+            The differences between var, let, and const variable declaration in
+            JavaScript include: Variables declared with var and const are scoped
+            to the immediate function body. Variables declared with the var
+            keyword are hoisted. Hoisting means that the variable can be
+            accessed in their enclosing scope even before they are declared.
+            Variables declared with the let keyword are block-scoped, which
+            means the variables will have scope to the immediate enclosing
+            block.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="flex flex-start items-center pt-2">
+          <div class="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
+        </div>
+        <div class="mt-0.5 ml-4 mb-6">
+          <h4 class="text-gray-800 font-semibold text-xl mb-1.5">
+            Difference Between Arrow Function and Regular Function
+          </h4>
+          <p class="text-gray-500 mb-3">
+            A programmer can get the same result as regular functions by writing
+            a few lines of code using arrow functions. Curly brackets are not
+            required if only one expression is present. <br />arguments object
+            inside the regular functions contains the list of arguments.
+            <br />Inside of a regular JavaScript function, this value is
+            dynamic. The dynamic context means that the value of this depends on
+            how the function is invoked. <br />The behavior of this inside of an
+            arrow, function differs considerably from the regular function’s
+            this behavior as an arrow function does not have its own “this”
+            keyword. <br />Regular functions are constructible and callable.
+            They can be called using the new keyword. <br />But, the arrow
+            functions are only callable and not constructible, i.e., arrow
+            functions can never be used as constructor functions.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="flex flex-start items-center pt-2">
+          <div class="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
+        </div>
+        <div class="mt-0.5 ml-4 pb-5">
+          <h4 class="text-gray-800 font-semibold text-xl mb-1.5">
+            Difference between forEach, map, filter, and find in JavaScript.
+          </h4>
+          <p class="text-gray-500 mb-3">
+            the most compelling case for using .forEach() in favor of a for loop
+            is that it’s easier. Even though it’s the same number of lines,
+            there’s less setup. If the fact that it’s easier, isn’t enough for
+            you… there is also a technical reason to use .forEach() in favor of
+            for loops. It has to do with the scoping of the code. <br />
+            .map() when you want to transform elements in an array.
+            <br />.filter() when you want to select a subset of multiple
+            elements from an array. <br />.filter() when you want to select a
+            subset of multiple elements from an array.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="flex flex-start items-center pt-2">
+          <div class="bg-gray-300 w-2 h-2 rounded-full -ml-1 mr-3"></div>
+        </div>
+        <div class="mt-0.5 ml-4 pb-5">
+          <h4 class="text-gray-800 font-semibold text-xl mb-1.5">
+            Why should you use template string?
+          </h4>
+          <p class="text-gray-500 mb-3">
+            Template strings are a powerful feature of modern JavaScript
+            released in ES6. It lets us insert/interpolate variables and
+            expressions into strings without needing to concatenate like in
+            older versions of JavaScript. It allows us to create strings that
+            are complex and contain dynamic elements.
+          </p>
+        </div>
+      </li>
+    </ol>
+    <div class="flex items-center justify-center px-96 py-8 bg-white">
+      <p class="text-base font-bold text-center text-gray-400">
+        Copyright 2021 News 247
+      </p>
+    </div>
+  </body>
+</html>

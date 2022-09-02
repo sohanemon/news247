@@ -67,7 +67,11 @@
             class="mr-5 relative hover:text-indigo-700 font-bold text-indigo-500 after:-bottom-1 after:border-b-2 after:absolute after:w-1/2 after:left-1/2 after:-translate-x-1/2 hover:after:w-full cursor-pointer after:transition-all after:duration-300 after:border-indigo-500"
             >News</a
           >
-          <a class="mr-5 hover:text-indigo-700 cursor-pointe">Blog</a>
+          <a
+            href="./blog.html"
+            class="mr-5 hover:text-indigo-700 cursor-pointer"
+            >Blog</a
+          >
         </nav>
       </div>
       <div>
@@ -86,7 +90,8 @@
     <!-- ----------------------- todo: no of items ------------------------ -->
     <div class="text-black bg-white rounded p-5 tracking-wider">
       <p>
-        <span id="item-count"></span> items found for the category <span id="category-name"></span>
+        <span id="item-count"></span> items found for the category
+        <span id="category-name"></span>
       </p>
     </div>
     <!-- --------------------- todo: sorting buttons ---------------------- -->
@@ -153,21 +158,24 @@
           Trending
         </button>
       </div>
-    </section> <div id="spinner" class="flex hidden mb-10 justify-center items-center">
-       <div class="spinner-border text-indigo-600 animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-      </div>
-</div>
-    <!-- -------------------------- todo: cards --------------------------- -->
-    <section id="card-container" class="space-y-6">
-     
     </section>
+    <div id="spinner" class="flex hidden mb-10 justify-center items-center">
+      <div
+        class="spinner-border text-indigo-600 animate-spin inline-block w-8 h-8 border-4 rounded-full"
+        role="status"
+      ></div>
+    </div>
+    <!-- -------------------------- todo: cards --------------------------- -->
+    <section id="card-container" class="space-y-6"></section>
 
     <!-- ----------------------- todo:modal in card ----------------------- -->
 
     <!-- -------------------------- todo: footer -------------------------- -->
-    <div class="flex items-center justify-center px-96 py-8 bg-white" 
-    <p class="text-base font-bold text-center text-gray-400">Copyright 2021 News 247</p>
-</div>
+    <div class="flex items-center justify-center px-96 py-8 bg-white">
+      <p class="text-base font-bold text-center text-gray-400">
+        Copyright 2021 News 247
+      </p>
+    </div>
     <!-- ----------------------------- script ----------------------------- -->
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script src="./js/common.js"></script>
