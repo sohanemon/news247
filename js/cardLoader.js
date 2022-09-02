@@ -1,7 +1,12 @@
 const loadCards = async ({ category_name: name, category_id: id }) => {
-  const res = await fetch(
-    `https://openapi.programming-hero.com/api/news/category/${id}`
-  );
+  let res;
+  try {
+    res = await fetch(
+      `https://openapi.programming-hero.com/api/news/category/${id}`
+    );
+  } catch (error) {
+    console.log(error);
+  }
   const { data } = await res.json();
   $("item-count").innerText = data.length;
   $("category-name").innerText = name;
@@ -11,8 +16,6 @@ const loadCards = async ({ category_name: name, category_id: id }) => {
 };
 
 const createCard = (news) => {
-  console.log(news);
-
   const modifiedDetails =
     news.details.slice(0, news.details.indexOf(".") + 1) +
     "<br><br>" +
@@ -50,7 +53,7 @@ const createCard = (news) => {
               />
               <div class="inline-flex flex-col items-start justify-start">
                 <p class="text-base text-gray-800 whitespace-nowrap">${
-                  news.author?.name
+                  news.author?.name ? news.author?.name : "Unknown Author"
                 }</p>
                 <p class="text-sm text-gray-500 capitalize">${news.author?.published_date?.slice(
                   0,
@@ -62,7 +65,9 @@ const createCard = (news) => {
               class="flex space-x-3 items-center justify-end w-20 h-6 basis-1/4 md:basis-0"
             >
               <i class="fa-regular fa-eye"></i>
-              <p class="text-lg font-bold text-gray-600 ">${news.total_view}</p>
+              <p class="text-lg font-bold text-gray-600 ">${
+                news.total_view ? news.total_view : "Not found"
+              }</p>
             </div>
             <div
               class="flex space-x-2.5 basis-1/2 md:basis-0 items-center justify-end w-1/5 h-6"
@@ -125,13 +130,13 @@ const createCard = (news) => {
           }</p>
           
         </div> <button type="button"
-          class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-          data-bs-dismiss="modal" aria-label="Close"></button>
+          class="btn-close   text-2xl hover:text-3xl transition-all font box-content  h-10 rounded-full hover:bg-indigo-400 p-1  border-none  opacity-50 ping-transparent  focus:outline-none focus:opacity-100 px-4 bg-indigo-300 active:scale-95 w-max relative left-1/2  -translate-x-1/2 "
+
+          data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
         </div>
         </div>
       </div>
     </div>
     `;
   $("card-container").appendChild(div);
-  console.log(news.author?.name);
 };
