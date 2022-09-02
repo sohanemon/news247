@@ -44,13 +44,13 @@ const createCard = (news) => {
             >
               <img
                 class="w-10 h-full rounded-full"
-                src=${news.author.img}
+                src=${news.author?.img}
               />
               <div class="inline-flex flex-col items-start justify-start">
                 <p class="text-base text-gray-800 whitespace-nowrap">${
-                  news.author.name
+                  news.author?.name
                 }</p>
-                <p class="text-sm text-gray-500 capitalize">${news.author.published_date.slice(
+                <p class="text-sm text-gray-500 capitalize">${news.author?.published_date?.slice(
                   0,
                   10
                 )}</p>
@@ -112,7 +112,7 @@ const createCard = (news) => {
                 <p class="text-base text-gray-800 whitespace-nowrap">${
                   news.author.name
                 }</p>
-                <p class="text-sm text-gray-500 capitalize">${news.author.published_date.slice(
+                <p class="text-sm text-gray-500 capitalize">${news.author?.published_date?.slice(
                   0,
                   10
                 )}</p>
@@ -131,5 +131,5 @@ const createCard = (news) => {
     </div>
     `;
   $("card-container").appendChild(div);
-  console.log(news.author.name);
+  console.log(news.author?.name);
 };
