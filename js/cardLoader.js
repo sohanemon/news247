@@ -3,6 +3,8 @@ const loadCards = async ({ category_name: name, category_id: id }) => {
     `https://openapi.programming-hero.com/api/news/category/${id}`
   );
   const { data } = await res.json();
+  $("item-count").innerText = data.length;
+  $("category-name").innerText = name;
   data.forEach((ele) => {
     createCard(ele);
   });
