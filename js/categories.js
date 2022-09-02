@@ -14,10 +14,12 @@ const displayCategories = async () => {
       "target:text-indigo-500 target:bg-indigo-50 px-2 focus:outline-none target:font-semibold rounded";
     a.innerText = element.category_name;
     a.onclick = (ev) => {
+      $("card-container").innerText = "";
       loadCards(element);
     };
     $("categories").appendChild(a);
   });
   $("anchor4").click();
 };
+
 displayCategories();
