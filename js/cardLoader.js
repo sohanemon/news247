@@ -72,15 +72,44 @@ const createCard = (news) => {
               <i class="fa-regular fa-star"></i>
             </div>
             <div
-              class="flex items-center justify-center w-10 h-full px-2.5 py-2.5"
+              class="flex items-center cursor-pointer justify-center w-10 h-full px-2.5 py-2.5"
             >
-              <button class="text-2xl   text-indigo-500">
+              <button class="text-2xl text-indigo-500 modal-btn" data-bs-toggle="modal" data-bs-target="#modal${
+                news._id
+              }">
                 <i class="fa-solid fa-arrow-right grid place-content-center hover:bg-indigo-100 w-14 h-14 rounded-full"></i>
               </button>
             </div>
           </div>
         </div>
       </div>
+      <div
+      class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto"
+      id="modal${news._id}"
+      tabindex="-1"
+      aria-labelledby="exampleModalLgLabel"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="modal-dialog modal-lg relative w-auto pointer-events-none">
+        <div
+          class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current"
+        >
+          <div
+            class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md"
+          >
+            <h5
+              class="text-xl font-medium leading-normal text-gray-800"
+              id="exampleModalLgLabel"
+            >
+              Large modal
+            </h5>
+           
+          </div>
+          <div class="modal-body relative p-4">...</div>
+        </div>
+      </div>
+    </div>
     `;
   $("card-container").appendChild(div);
   console.log(news.author.name);
