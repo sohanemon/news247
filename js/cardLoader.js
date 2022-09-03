@@ -10,6 +10,7 @@ const loadCards = async ({ category_name: name, category_id: id }) => {
   const { data } = await res.json();
   $("item-count").innerText = data.length;
   $("category-name").innerText = name;
+  data.sort((a, b) => b.total_view - a.total_view);
   data.forEach((ele) => {
     createCard(ele);
   });
