@@ -21,6 +21,7 @@ const createCard = (news) => {
     news.details.slice(0, news.details.indexOf(".") + 1) +
     "<br><br>" +
     news.details.slice(news.details.indexOf(".") + 1);
+
   const div = document.createElement("div");
   div.className = "flex justify-center";
   div.innerHTML = `
@@ -54,12 +55,13 @@ const createCard = (news) => {
               />
               <div class="inline-flex flex-col items-start justify-start">
                 <p class="text-base text-gray-800 whitespace-nowrap">${
-                  news.author?.name ? news.author?.name : "Unknown Author"
+                  news.author?.name ? news.author?.name : "Unknown"
                 }</p>
-                <p class="text-sm text-gray-500 capitalize">${news.author?.published_date?.slice(
-                  0,
-                  10
-                )}</p>
+                <p class="text-sm text-gray-500 capitalize">${
+                  news.author?.published_date
+                    ? news.author?.published_date?.slice(0, 10)
+                    : "No Date"
+                }</p>
               </div>
             </div>
             <div
@@ -67,17 +69,15 @@ const createCard = (news) => {
             >
               <i class="fa-regular fa-eye"></i>
               <p class="text-lg font-bold text-gray-600 ">${
-                news.total_view ? news.total_view : "Not found"
+                news.total_view || news.total_view === 0
+                  ? news.total_view
+                  : "Not found"
               }</p>
             </div>
             <div
               class="flex space-x-2.5 basis-1/2 md:basis-0 items-center justify-end w-1/5 h-6"
             >
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
-              <i class="fa-regular fa-star"></i>
+              ${getStar(news.rating.number)}
             </div>
             <div
               class="flex items-center cursor-pointer justify-center w-10 h-full px-2.5 py-2.5"
