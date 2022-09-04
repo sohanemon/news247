@@ -8,8 +8,14 @@ const loadCards = async ({ category_name: name, category_id: id }) => {
     console.log(error);
   }
   const { data } = await res.json();
-  $("item-count").innerText = data.length;
-  $("category-name").innerText = name;
+  if (data.length <= 0) {
+    $("message").innerText = "No data found";
+  } else {
+    $(
+      "message"
+    ).innerHTML = `${data.length} items found for the category ${name}`;
+  }
+
   data.sort((a, b) => b.total_view - a.total_view);
   data.forEach((ele) => {
     createCard(ele);
